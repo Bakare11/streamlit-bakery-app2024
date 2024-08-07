@@ -82,10 +82,10 @@ try:
     daily_sales_df = daily_sales.reset_index().rename(columns={'sales':"total sales"})
     ax = daily_sales_df.plot.area(x='date',
                                 y='total sales')
-    st.area_chart(ax)(daily_sales_df,
+    st.area_chart(daily_sales_df,
                       x = 'date',
                       y='total sales')
-    st.pyplot(ax)
+    
 except ValueError as e:
     st.error(
         """ Error: """ % e.reason
